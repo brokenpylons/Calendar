@@ -22,4 +22,4 @@ Open an issue or shoot me an email!
 
 ## License
 
-ICS
+ISC
