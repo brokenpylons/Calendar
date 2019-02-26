@@ -19,3 +19,7 @@ This URL can be added to Google Calendar, Tunderbird, etc.
 ## It doesn't work anymore?
 
 Open an issue or shoot me an email!
+
+## License
+
+ICS
