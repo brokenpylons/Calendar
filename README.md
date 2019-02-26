@@ -1,5 +1,5 @@
 # Calendar
-A little service that fetches the iCalendar file from the "Wise Time Table".
+A little service that fetches iCalendar files from the "Wise Time Table".
 
 ## Why?
 The "Wise Time Table" serves the iCalendar files in an disingenuous way. They open a new page, redirect to a different URL and return the content as ```application/octet-stream```, so the calendar cannot be consumed by other applications (only imported).
