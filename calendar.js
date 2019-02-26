@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/calendar', async (req, res) => {
-  res.set('content-type', 'text/html');
+  res.set('content-type', 'text/plain');
 
   if (!('filterId' in req.query)) {
     res.sendStatus(400);
