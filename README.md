@@ -8,7 +8,7 @@ The "Wise Time Table" serves the iCalendar files in an disingenuous way. They op
 This service downloads the iCalendar file on request and serves it as ```text/plain```.
 
 ## Usage
-The service is live at <http://calendar.brokenpylons.com>. You can request the calendar file by calling the ```calendar``` endpoint. It accepts a parameter ```filterId```, which you can get by navigating to the timetable website, selecting the options you want and then clicking the little book icon at the upper left corner. You will get a permanent link, then you just need to copy the ```filterId``` part.
+The service is live at <http://calendar.brokenpylons.com> (this link redirects here). You can request the calendar file by calling the ```calendar``` endpoint. It accepts a parameter ```filterId```, which you can get by navigating to the timetable website, selecting the options you want and then clicking the little book icon at the upper left corner. You will get a permanent link, then you just need to copy the ```filterId``` part.
 
 For example:
 
