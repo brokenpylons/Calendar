@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
+    "forever": "^0.15.3",
     "node-fetch": "^2.3.0",
     "puppeteer": "^1.12.2"
   }

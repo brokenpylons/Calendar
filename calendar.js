@@ -61,6 +61,7 @@ app.get('/calendar', async (req, res) => {
     const data = await fetchCalendar(req.query.filterId);
     res.send(data);
   } catch(e) {
+    console.log(e);
     res.sendStatus(404);
   }
 });
