@@ -52,7 +52,7 @@ async function fetchCalendar(filterId) {
 }
 
 app.get('/', (req, res) => { 
-  res.send('Hello');
+  res.redirect('https://github.com/brokenpylons/Calendar');
 });
 
 app.get('/calendar', async (req, res) => {
