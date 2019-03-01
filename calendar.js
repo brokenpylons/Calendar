@@ -36,6 +36,15 @@ async function fetchCalendar(filterId) {
     });
   });
 
+  let titles;
+  const subjectFilter = filterId.split(';', 4).pop();
+  if (subjectFilter !== '0') {
+    const ids = subjectFilter.split(',');
+    titles = await page.evaluate((ids) => {
+      return ids.map(id => document.querySelector(`tr[data-rk="${id}"]`).querySelector('span').innerHTML);
+    }, ids);
+  }
+
   await page.evaluate(() => {
     const node = document.querySelector('a[title="Izvoz celotnega urnika v ICS formatu  "]');
     if (node == null) {
@@ -46,7 +55,13 @@ async function fetchCalendar(filterId) {
     node.click();
   });
 
-  const data = await download;
+  let data = await download;
+  if (titles != null) {
+    data = data.replace(/\s*BEGIN:VEVENT[\s\S]*?END:VEVENT\s*/g, event => {
+      return titles.some(title => event.includes(`SUMMARY:${title}`)) ? event : '';
+    });
+  }
+
   await browser.close();
   return data;
 }
