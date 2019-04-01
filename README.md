@@ -1,4 +1,7 @@
 # Calendar
+![GitHub](https://img.shields.io/github/license/brokenpylons/Calendar.svg)
+![Uptime Robot status](https://img.shields.io/uptimerobot/status/m782317712-2ae246eb8b50066d57d5fc80.svg)
+
 A little service that fetches iCalendar files from the "Wise Time Table".
 
 ## Why?
