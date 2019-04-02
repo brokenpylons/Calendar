@@ -31,7 +31,7 @@ After=network-online.target
 Type=simple
 ExecStart=/usr/bin/node /opt/calendar/calendar.js
 User=calendar
-Restat=on-failure
+Restart=always
 Environment=NODE_ENV=production
 Environment=PORT=8080
 Environment=HOST=localhost
