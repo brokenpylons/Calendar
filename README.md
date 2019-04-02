@@ -21,7 +21,7 @@ This URL can be added to Google Calendar, Tunderbird, etc.
 
 ## Service
 
-```
+```ini
 [Unit]
 Description=calendar
 Requires=network-online.target
