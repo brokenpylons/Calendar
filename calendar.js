@@ -89,3 +89,4 @@ app.get('/calendar', async (req, res) => {
 });
 
 app.listen(port, host);
+console.log(`${host}:${port}`);
