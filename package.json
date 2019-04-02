@@ -3,14 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "calendar.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "forever": "^0.15.3",
     "morgan": "^1.9.1",
     "node-fetch": "^2.3.0",
     "puppeteer": "^1.12.2"
