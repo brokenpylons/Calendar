@@ -19,6 +19,27 @@ For example:
 
 This URL can be added to Google Calendar, Tunderbird, etc.
 
+## Service
+
+```
+[Unit]
+Description=calendar
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /opt/calendar/calendar.js
+User=calendar
+Restat=on-failure
+Environment=NODE_ENV=production
+Environment=PORT=8080
+Environment=HOST=localhost
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ## It doesn't work anymore?
 
 Open an issue or shoot me an email!
