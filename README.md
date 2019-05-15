@@ -21,6 +21,10 @@ This URL can be added to Google Calendar, Tunderbird, etc.
 
 ## Service
 
+```
+/etc/systemd/system/calendar.service
+```
+
 ```ini
 [Unit]
 Description=calendar
@@ -38,6 +42,16 @@ Environment=HOST=localhost
 
 [Install]
 WantedBy=multi-user.target
+```
+
+## Namespace cloning
+
+```
+/etc/sysctl.d/50-namespace-cloning.conf
+```
+
+```
+kernel.unprivileged_userns_clone=1
 ```
 
 ## It doesn't work anymore?
