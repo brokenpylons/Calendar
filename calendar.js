@@ -70,6 +70,11 @@ app.get('/', (req, res) => {
   res.redirect('https://github.com/brokenpylons/Calendar');
 });
 
+app.get('/up', (req, res) => { 
+  res.set('content-type', 'text/plain');
+  res.send('yes');
+});
+
 app.get('/calendar', async (req, res) => {
   res.set('content-type', 'text/plain');
 
