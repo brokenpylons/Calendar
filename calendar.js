@@ -12,6 +12,8 @@ const host = process.env.HOST || 'localhost';
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'var/log/access.log'), { flags: 'a' });
 app.use(morgan('combined', { stream: accessLogStream }));
 
+let activePromise = Promise.resolve();
+
 async function fetchCalendar(filterId) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -84,7 +86,10 @@ app.get('/calendar', async (req, res) => {
   }
 
   try {
-    const data = await fetchCalendar(req.query.filterId);
+    await activePromise;
+    activePromise = fetchCalendar(req.query.filterId);
+    const data = await activePromise;
+
     const position = data.indexOf('BEGIN:VEVENT');
     res.send(data.substr(0, position) + 'X-WR-TIMEZONE:Europe/Ljubljana\n' + data.substr(position));
   } catch(e) {
