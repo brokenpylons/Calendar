@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 const express = require('express');
 const fetch = require('node-fetch');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const morgan = require('morgan');
 const fs = require('fs');
 const path = require('path');
@@ -8,13 +10,12 @@ const app = express();
 
 const port = process.env.PORT || 8080;
 const host = process.env.HOST || 'localhost';
-
-const logsPath = 'var/log';
-if (!fs.existsSync(logsPath)) {
-  fs.mkdirSync(logsPath, {recursive: true});
+const browser_path = process.env.BROWSER_PATH;
+if (!browser_path) {
+  throw new Error("Path to the browser must be specified");
 }
-const accessLogStream = fs.createWriteStream(path.join(__dirname, `${logsPath}/access.log`), { flags: 'a+' });
-app.use(morgan('combined', { stream: accessLogStream }));
+
+app.use(morgan('combined'));
 
 async function getTitles(page, filterId) {
   const subjectFilter = filterId.split(';', 4).pop();
@@ -61,7 +62,7 @@ function setupDownloadHook(page, cookies) {
 }
 
 async function fetchCalendar(filterId) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({executablePath: browser_path});
   try {
     const page = await browser.newPage();
     await page.goto(`https://www.wise-tt.com/wtt_um_feri/index.jsp?filterId=${filterId}`);
