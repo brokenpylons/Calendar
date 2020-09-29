@@ -42,7 +42,9 @@ async function clickExport(page) {
 function setupDownloadHook(page, cookies) {
   return new Promise(resolve => {
     page.on('request', async request => {
-      if (request.url() === 'http://www.wise-tt.com/wtt_um_feri/TextViewer') {
+      console.log(request.url());
+
+      if (request.url() === 'https://www.wise-tt.com/wtt_um_feri/TextViewer') {
         const response = await fetch(request.url(), {
           headers: {
             ...request.headers(),
@@ -62,7 +64,8 @@ async function fetchCalendar(filterId) {
   const browser = await puppeteer.launch();
   try {
     const page = await browser.newPage();
-    await page.goto(`http://www.wise-tt.com/wtt_um_feri/index.jsp?filterId=${filterId}`);
+    await page.goto(`https://www.wise-tt.com/wtt_um_feri/index.jsp?filterId=${filterId}`);
+
     await page.setRequestInterception(true);
     const cookies = await page.cookies();
     const download = setupDownloadHook(page, cookies);
