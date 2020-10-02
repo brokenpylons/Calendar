@@ -19,7 +19,10 @@ For example:
 
 This URL can be added to Google Calendar, Tunderbird, etc.
 
-## Service
+## Deployment
+If you are deploying on NixOS you can refer to the configuration that is used on our server, [link](https://github.com/UM-LPM/server/blob/master/machines/calendar/configure.nix). Otherwise you can use the following configuration files:
+
+### Service
 
 ```
 /etc/systemd/system/calendar.service
@@ -39,12 +42,13 @@ Restart=always
 Environment=NODE_ENV=production
 Environment=PORT=8080
 Environment=HOST=localhost
+Environment=BROWSER_PATH=/usr/bin/chromium
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-## Namespace cloning
+### Namespace cloning
 
 ```
 /etc/sysctl.d/50-namespace-cloning.conf
