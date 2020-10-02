@@ -57,6 +57,10 @@ WantedBy=multi-user.target
 ```
 kernel.unprivileged_userns_clone=1
 ```
+### Notes
+The following changes needed to be made to be able to deploy on NixOS, you might want to revert them:
+* ```puppeteer-core``` was used instead of ```puppeteer```. The difference is that the first is used in combination with the system version of ```chromium```, thus you need to make sure the versions are compatible.
+* The access log is written to stdout
 
 ## It doesn't work anymore?
 
