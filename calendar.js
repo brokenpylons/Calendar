@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
-const express = require('express');
-const fetch = require('node-fetch');
-const puppeteer = require('puppeteer-core');
-const morgan = require('morgan');
-const fs = require('fs');
-const path = require('path');
+import express from 'express';
+import morgan from 'morgan';
+import fetch from 'node-fetch';
+import puppeteer from 'puppeteer-core';
+import fs from 'fs';
+import path from 'path';
+
 const app = express();
 
 const port = process.env.PORT || 8080;
