@@ -4,13 +4,13 @@
 
 let
   sources = {
-    "@types/node-17.0.0" = {
+    "@types/node-17.0.4" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "17.0.0";
+      version = "17.0.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-17.0.0.tgz";
-        sha512 = "eMhwJXc931Ihh4tkU+Y7GiLzT/y/DBNpNtr4yU9O2w3SYBsr9NaOPhQlLKRmoWtI54uNwuo0IOUFQjVOTZYRvw==";
+        url = "https://registry.npmjs.org/@types/node/-/node-17.0.4.tgz";
+        sha512 = "6xwbrW4JJiJLgF+zNypN5wr2ykM9/jHcL7rQ8fZe2vuftggjzZeRSM4OwRc6Xk8qWjwJ99qVHo/JgOGmomWRog==";
       };
     };
     "@types/yauzl-2.9.2" = {
@@ -247,13 +247,13 @@ let
         sha1 = "978857442c44749e4206613e37946205826abd80";
       };
     };
-    "devtools-protocol-0.0.937139" = {
+    "devtools-protocol-0.0.901419" = {
       name = "devtools-protocol";
       packageName = "devtools-protocol";
-      version = "0.0.937139";
+      version = "0.0.901419";
       src = fetchurl {
-        url = "https://registry.npmjs.org/devtools-protocol/-/devtools-protocol-0.0.937139.tgz";
-        sha512 = "daj+rzR3QSxsPRy5vjjthn58axO8c11j58uY0lG5vvlJk/EiOdCWOptGdkXDjtuRHr78emKq0udHCXM4trhoDQ==";
+        url = "https://registry.npmjs.org/devtools-protocol/-/devtools-protocol-0.0.901419.tgz";
+        sha512 = "4INMPwNm9XRpBukhNbF7OB6fNTTCaI8pzy/fXg0xQzAy5h3zL1P8xT3QazgKqBrb/hAYwIBizqDBZ7GtJE74QQ==";
       };
     };
     "ee-first-1.1.1" = {
@@ -769,13 +769,13 @@ let
         sha512 = "LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==";
       };
     };
-    "puppeteer-core-13.0.0" = {
+    "puppeteer-core-11.0.0" = {
       name = "puppeteer-core";
       packageName = "puppeteer-core";
-      version = "13.0.0";
+      version = "11.0.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/puppeteer-core/-/puppeteer-core-13.0.0.tgz";
-        sha512 = "JJvGCuUNpONaFK/1tizyVthfqkEaiTCteL9HkdxN3//P9cVa+YnehlKIoJCStiKRaa3CjRu/dIJftA5XJ2EGrQ==";
+        url = "https://registry.npmjs.org/puppeteer-core/-/puppeteer-core-11.0.0.tgz";
+        sha512 = "hfQ39KNP0qKplQ86iaCNXHH9zpWlV01UFdggt2qffgWeCBF9KMavwP/k/iK/JidPPWfOnKZhDLSHZVSUr73DtA==";
       };
     };
     "qs-6.9.6" = {
@@ -1055,7 +1055,7 @@ let
     version = "1.1.0";
     src = ./.;
     dependencies = [
-      sources."@types/node-17.0.0"
+      sources."@types/node-17.0.4"
       sources."@types/yauzl-2.9.2"
       sources."accepts-1.3.7"
       (sources."agent-base-6.0.2" // {
@@ -1088,7 +1088,7 @@ let
       sources."debug-2.6.9"
       sources."depd-1.1.2"
       sources."destroy-1.0.4"
-      sources."devtools-protocol-0.0.937139"
+      sources."devtools-protocol-0.0.901419"
       sources."ee-first-1.1.1"
       sources."encodeurl-1.0.2"
       sources."end-of-stream-1.4.4"
@@ -1157,7 +1157,7 @@ let
       sources."proxy-addr-2.0.7"
       sources."proxy-from-env-1.1.0"
       sources."pump-3.0.0"
-      (sources."puppeteer-core-13.0.0" // {
+      (sources."puppeteer-core-11.0.0" // {
         dependencies = [
           sources."debug-4.3.2"
           sources."ms-2.1.2"
